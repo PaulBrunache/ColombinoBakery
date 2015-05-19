@@ -2,10 +2,16 @@ doctype html
 html
   head
     title
-      | Workspaceox
+      | Colombinobakery
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
-    = yield
-  
+    .site-container
+      .c-9#left.tablet-hide
+        = render "layouts/sidebar"
+      .c-9.gap-l-9.tablet-18.gap-t-none style="border: 1px solid red;"
+        = render "layouts/menu"
+        .start-content
+        = yield
+      

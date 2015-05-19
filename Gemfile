@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'euphoria'
 gem 'slim-rails'
 gem 'html2slim'
+gem "font-awesome-rails"
 gem 'rails',                '4.2.0'
 gem 'sass-rails',           '5.0.2'
 gem 'uglifier',             '2.5.3'
