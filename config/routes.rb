@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
 
+  get 'users/index'
+
+  get 'users/create'
+
+  get 'users/show'
+
+  get 'users/new'
+
+  get 'users/edit'
+
+  get 'users/destroy'
+
+  get 'users/update'
+
   get 'pages/about'
 
   get 'pages/catering'
