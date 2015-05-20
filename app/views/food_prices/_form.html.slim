@@ -1,0 +1,36 @@
+= form_for @food_price do |f|
+  - if @food_price.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@food_price.errors.count, "error")} prohibited this food_price from being saved:"
+      ul
+        - @food_price.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :description
+    = f.text_field :description
+  .field
+    = f.label :price
+    = f.text_field :price
+  .field
+    = f.label :serves
+    = f.text_field :serves
+  .field
+    = f.label :small
+    = f.text_field :small
+  .field
+    = f.label :regular
+    = f.text_field :regular
+  .field
+    = f.label :large
+    = f.text_field :large
+  .field
+    = f.label :party
+    = f.text_field :party
+  .field
+    = f.label :belongs_to
+    = f.text_field :belongs_to
+  .actions = f.submit

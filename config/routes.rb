@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :categories
+  resources :food_prices
 
-  resources :prices
+  resources :categories
 
   get 'users/index'
 

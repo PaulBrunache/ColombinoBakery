@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyString
+  price: 
+  serves: MyString
+  small: MyString
+  regular: MyString
+  large: MyString
+  party: MyString
+  belongs_to: 
+
+two:
+  name: MyString
+  description: MyString
+  price: 
+  serves: MyString
+  small: MyString
+  regular: MyString
+  large: MyString
+  party: MyString
+  belongs_to: 

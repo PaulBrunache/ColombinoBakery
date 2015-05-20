@@ -1,0 +1,37 @@
+h1 Listing food_prices
+
+table
+  thead
+    tr
+      th Name
+      th Description
+      th Price
+      th Serves
+      th Small
+      th Regular
+      th Large
+      th Party
+      th Belongs to
+      th
+      th
+      th
+
+  tbody
+    - @food_prices.each do |food_price|
+      tr
+        td = food_price.name
+        td = food_price.description
+        td = food_price.price
+        td = food_price.serves
+        td = food_price.small
+        td = food_price.regular
+        td = food_price.large
+        td = food_price.party
+        td = food_price.belongs_to
+        td = link_to 'Show', food_price
+        td = link_to 'Edit', edit_food_price_path(food_price)
+        td = link_to 'Destroy', food_price, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Food price', new_food_price_path
