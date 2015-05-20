@@ -1,4 +1,4 @@
-p#notice = notice
+p.notice = notice
 
 p
   strong Name:
@@ -24,10 +24,7 @@ p
 p
   strong Party:
   = @food_price.party
-p
-  strong Belongs to:
-  = @food_price.belongs_to
 
-= link_to 'Edit', edit_food_price_path(@food_price)
+button = link_to 'Edit', edit_food_price_path(@food_price)
 '|
-= link_to 'Back', food_prices_path
+button = link_to 'Back', food_prices_path

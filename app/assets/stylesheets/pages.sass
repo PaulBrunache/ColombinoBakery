@@ -7,25 +7,52 @@ $logo_text_color: white
 $main_color: rgba(46, 204, 113, 1)
 $about_bg_color: rgba(255,255,255, .92)
 $about_color: #2a2a2a
-
+html
+    overflow: auto
 body
     background-color: #f9f9f9
+    color: $about_color
+    overflow: auto
+    
+.paper
+    background-color: white
+    &:before, &:after
+        z-index: -1
+        position: absolute
+        content: ""
+        bottom: 15px
+        left: 10px
+        width: 50%
+        max-width: 300px
+        height: 10px
+        background: rgba(0,0,0,0.7)
+        -webkit-box-shadow: 0 15px 10px rgba(0,0,0,0.7)
+        -moz-box-shadow: 0 15px 10px rgba(0,0,0,0.7)
+        box-shadow: 0 15px 10px rgba(0,0,0,0.7)
+        -webkit-transform: rotate(-3deg)
+        -moz-transform: rotate(-3deg)
+        -o-transform: rotate(-3deg)
+        -ms-transform: rotate(-3deg)
+        transform: rotate(-3deg)
+    &:after 
+        -webkit-transform: rotate(3deg)
+        -moz-transform: rotate(3deg)
+        -o-transform: rotate(3deg)
+        -ms-transform: rotate(3deg)
+        transform: rotate(3deg)
+        right: 10px
+        left: auto
 
-nav 
-    a
-        color: #3b3c3f
+
 /*=============================================================================
  ** Left side
  **============================================================================
 .row
     padding: 1%
-#right
-    max-width: 55.6%
 #left
     background-image: image-url('bakeryblur.jpg')
     position: fixed 
     top: 0
-    bottom: 0
     height: 100%
     background-size: cover
     min-height: 768px
@@ -74,5 +101,25 @@ nav
 /*=============================================================================
  ** Right side
  **============================================================================
-.menu
-    margin: 0
+#right
+    .row
+        &:nth-child(even)
+            background-color: white
+    .start-content
+        border: 1px solid red
+        overflow: auto
+        padding: 1%
+    .menu
+        margin: 0
+        font-size: 1.2rem
+        li
+            text-align: center
+    #about
+        span
+            font-family: "Tangerine"
+            text-align: center
+            font-size: 3rem
+            color: #2a2a2a
+            margin-left: 40%
+        padding: 2%
+        font-family: 'freight-text-pro', georgia, serif

@@ -3,6 +3,7 @@ html
   head
     title
       | Colombinobakery
+    meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
@@ -10,8 +11,9 @@ html
     .site-container
       .c-8#left.tablet-hide
         = render "layouts/sidebar"
-      .c-10#right.gap-l-8.tablet-18.gap-t-none 
-        = render "layouts/menu"
-        .start-content
-        = yield
+      #right.c-10.gap-l-8.tablet-18.gap-t-none
+        .c-18
+          = render "layouts/menu"
+          .start-content
+            = yield
       

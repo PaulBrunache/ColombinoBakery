@@ -1,7 +1,6 @@
 class CreateFoodPrices < ActiveRecord::Migration
   def change
     create_table :food_prices do |t|
-      t.string :name
       t.string :description
       t.decimal :price, precision: 8, scale: 2
       t.string :serves

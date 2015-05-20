@@ -1,40 +1,29 @@
 Rails.application.routes.draw do
+  
+  root 'pages#home'
+  
+  resources :food_prices,:users,:categories
+  
+  get 'pages/about', to: 'pages#about'
+  
+  get 'pages/catering' , to: 'pages#catering'
 
-  resources :food_prices
+  get 'pages/deli', to: 'pages#deli'
 
-  resources :categories
+  get 'pages/pizza', to: 'pages#pizza'
 
-  get 'users/index'
+  get 'pages/pastries' , to: 'pages#pastries'
 
-  get 'users/create'
+  get 'pages/subs' , to: 'pages#subs'
 
-  get 'users/show'
 
-  get 'users/new'
 
-  get 'users/edit'
-
-  get 'users/destroy'
-
-  get 'users/update'
-
-  get 'pages/about'
-
-  get 'pages/catering'
-
-  get 'pages/deli'
-
-  get 'pages/pizza'
-
-  get 'pages/pastries'
-
-  get 'pages/subs'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'pages#home'
+ 
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

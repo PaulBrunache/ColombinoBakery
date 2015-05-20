@@ -1,13 +1,10 @@
-nav
-  ul.mobile
-    li 
+nav.fixed
+  .mobile
       button.menu-toggle.fa.fa-bars.fa-2x
   ul.menu.bordered.horizontal
-    li
-      a href="/"  Welcome
-    li
-      a href="/home/about"  Our Team
-    li
-      a href="#"  Our Offering
-    li
-      a href="#"  Contact Us
+    = active_link 'Home', root_path
+    = active_link 'Catering', pages_catering_path
+    = active_link 'Deli', pages_deli_path
+    = active_link 'Pastries', pages_pastries_path
+    = active_link 'pizza', pages_pizza_path
+    = active_link 'Subs', pages_subs_path

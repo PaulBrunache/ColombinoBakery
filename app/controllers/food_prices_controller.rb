@@ -69,6 +69,6 @@ class FoodPricesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def food_price_params
-      params.require(:food_price).permit(:name, :description, :price, :serves, :small, :regular, :large, :party, :belongs_to)
+      params.require(:food_price).permit(:name, :description, :price, :serves, :small, :regular, :large, :party, :category_id)
     end
 end
