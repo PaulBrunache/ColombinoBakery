@@ -3,7 +3,6 @@ h1 Listing food_prices
 table
   thead
     tr
-      th Name
       th Description
       th Price
       th Serves
@@ -11,7 +10,7 @@ table
       th Regular
       th Large
       th Party
-      th Belongs to
+      th Category
       th
       th
       th
@@ -19,7 +18,6 @@ table
   tbody
     - @food_prices.each do |food_price|
       tr
-        td = food_price.name
         td = food_price.description
         td = food_price.price
         td = food_price.serves
@@ -27,11 +25,11 @@ table
         td = food_price.regular
         td = food_price.large
         td = food_price.party
-        td = food_price.belongs_to
+        td = food_price.category
         td = link_to 'Show', food_price
         td = link_to 'Edit', edit_food_price_path(food_price)
         td = link_to 'Destroy', food_price, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
 
-= link_to 'New Food price', new_food_price_path
+button.btn.green.round = link_to ' New Food Item', new_food_price_path, class: ['fa','fa-plus']

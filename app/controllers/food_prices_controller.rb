@@ -1,28 +1,22 @@
 class FoodPricesController < ApplicationController
   before_action :set_food_price, only: [:show, :edit, :update, :destroy]
 
-  # GET /food_prices
-  # GET /food_prices.json
   def index
     @food_prices = FoodPrice.all
   end
 
-  # GET /food_prices/1
-  # GET /food_prices/1.json
+
   def show
   end
 
-  # GET /food_prices/new
+
   def new
     @food_price = FoodPrice.new
   end
 
-  # GET /food_prices/1/edit
   def edit
   end
 
-  # POST /food_prices
-  # POST /food_prices.json
   def create
     @food_price = FoodPrice.new(food_price_params)
 
@@ -37,8 +31,6 @@ class FoodPricesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /food_prices/1
-  # PATCH/PUT /food_prices/1.json
   def update
     respond_to do |format|
       if @food_price.update(food_price_params)
@@ -51,8 +43,6 @@ class FoodPricesController < ApplicationController
     end
   end
 
-  # DELETE /food_prices/1
-  # DELETE /food_prices/1.json
   def destroy
     @food_price.destroy
     respond_to do |format|
@@ -62,13 +52,11 @@ class FoodPricesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_food_price
       @food_price = FoodPrice.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def food_price_params
-      params.require(:food_price).permit(:name, :description, :price, :serves, :small, :regular, :large, :party, :category_id)
+      params.require(:food_price).permit(:description, :price, :serves, :small, :regular, :large, :party, :category_id)
     end
 end

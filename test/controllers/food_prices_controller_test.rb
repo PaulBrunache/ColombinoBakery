@@ -18,7 +18,7 @@ class FoodPricesControllerTest < ActionController::TestCase
 
   test "should create food_price" do
     assert_difference('FoodPrice.count') do
-      post :create, food_price: { belongs_to: @food_price.belongs_to, description: @food_price.description, large: @food_price.large, name: @food_price.name, party: @food_price.party, price: @food_price.price, regular: @food_price.regular, serves: @food_price.serves, small: @food_price.small }
+      post :create, food_price: { category_id: @food_price.category_id, description: @food_price.description, large: @food_price.large, party: @food_price.party, price: @food_price.price, regular: @food_price.regular, serves: @food_price.serves, small: @food_price.small }
     end
 
     assert_redirected_to food_price_path(assigns(:food_price))
@@ -35,7 +35,7 @@ class FoodPricesControllerTest < ActionController::TestCase
   end
 
   test "should update food_price" do
-    patch :update, id: @food_price, food_price: { belongs_to: @food_price.belongs_to, description: @food_price.description, large: @food_price.large, name: @food_price.name, party: @food_price.party, price: @food_price.price, regular: @food_price.regular, serves: @food_price.serves, small: @food_price.small }
+    patch :update, id: @food_price, food_price: { category_id: @food_price.category_id, description: @food_price.description, large: @food_price.large, party: @food_price.party, price: @food_price.price, regular: @food_price.regular, serves: @food_price.serves, small: @food_price.small }
     assert_redirected_to food_price_path(assigns(:food_price))
   end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150520000835) do
+ActiveRecord::Schema.define(version: 20150520231555) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -20,9 +20,11 @@ ActiveRecord::Schema.define(version: 20150520000835) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "categories", ["page_id"], name: "index_categories_on_page_id"
+
   create_table "food_prices", force: :cascade do |t|
     t.string   "description"
-    t.decimal  "price",       precision: 8, scale: 2
+    t.decimal  "price",       precision: 5, scale: 2
     t.string   "serves"
     t.string   "small"
     t.string   "regular"
@@ -32,6 +34,8 @@ ActiveRecord::Schema.define(version: 20150520000835) do
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
   end
+
+  add_index "food_prices", ["category_id"], name: "index_food_prices_on_category_id"
 
   create_table "pages", force: :cascade do |t|
     t.string   "name"

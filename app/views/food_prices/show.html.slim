@@ -1,8 +1,5 @@
-p.notice = notice
+p#notice = notice
 
-p
-  strong Name:
-  = @food_price.name
 p
   strong Description:
   = @food_price.description
@@ -24,7 +21,10 @@ p
 p
   strong Party:
   = @food_price.party
+p
+  strong Category:
+  = @food_price.category
 
-button = link_to 'Edit', edit_food_price_path(@food_price)
+= link_to 'Edit', edit_food_price_path(@food_price)
 '|
-button = link_to 'Back', food_prices_path
+= link_to 'Back', food_prices_path

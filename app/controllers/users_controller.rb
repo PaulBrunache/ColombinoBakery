@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
-    @categories = User.all
+    @user = User.all
   end
 
   def show
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
 
   def update
     respond_to do |format|
-      if @user.update(category_params)
+      if @user.update(user_params)
         format.html { redirect_to @user, notice: 'Category was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
@@ -57,6 +57,6 @@ class UsersController < ApplicationController
     end
 
     def category_params
-      params.require(:email, :password_digest)
+      params.require(:user).permit(:name, :password_digest)
     end
 end
