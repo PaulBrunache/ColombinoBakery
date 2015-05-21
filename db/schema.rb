@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20150521133352) do
   create_table "pages", force: :cascade do |t|
     t.string   "picture"
     t.string   "page"
+    t.boolean  "active"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

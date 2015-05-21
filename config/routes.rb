@@ -1,12 +1,8 @@
 Rails.application.routes.draw do
-  
-  resources :pages
-
-  resources :food_prices
 
   root 'pages#home'
   
-  resources :food_prices, :users, :categories
+  resources :food_prices, :users, :categories, :pages
   
   get 'pages/about', to: 'pages#about'
   

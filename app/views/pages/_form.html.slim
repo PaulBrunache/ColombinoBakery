@@ -1,4 +1,4 @@
-= form_for @page do |f|
+.form = form_for @page, html: { multipart: true } do |f|
   - if @page.errors.any?
     #error_explanation
       h2 = "#{pluralize(@page.errors.count, "error")} prohibited this page from being saved:"
@@ -6,10 +6,25 @@
         - @page.errors.full_messages.each do |message|
           li = message
 
-  .field
+  .row
     = f.label :picture
-    = f.text_field :picture
-  .field
+    = f.file_field :picture, accept: 'image/jpeg,image/jpg,image/gif,image/png'
+  .row
+    = f.label 'Set As Default'
+    = f.select :active, options_for_page, prompt: 'Select status'
+  .row
     = f.label :page
-    = f.text_field :page
+    = f.select :page, options_for_page('pages'), prompt: 'Select a page'
+    
   .actions = f.submit
+  
+javascript:
+  | $('#page_picture').bind('change',function(){
+  	| size_in_megabytes = this.files[0].size/1024/1024;
+  	| if (size_in_megabytes > 5){
+  		| alert('Maximum file size is 5MB please use a smaller file');
+  	| }
+  	| });
+
+
+

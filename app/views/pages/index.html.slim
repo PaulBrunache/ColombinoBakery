@@ -3,17 +3,18 @@ h1 Listing pages
 table
   thead
     tr
+      th Page Name
       th Picture
-      th Page
-      th
+      th Is Default
       th
       th
 
   tbody
     - @pages.each do |page|
       tr
-        td = page.picture
         td = page.page
+        td = image_tag(page.picture.url, size: '100x100') if page.picture?
+        td = page.active
         td = link_to 'Show', page
         td = link_to 'Edit', edit_page_path(page)
         td = link_to 'Destroy', page, data: {:confirm => 'Are you sure?'}, :method => :delete
