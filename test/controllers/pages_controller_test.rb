@@ -1,39 +1,49 @@
 require 'test_helper'
 
 class PagesControllerTest < ActionController::TestCase
-  test "should get home" do
-    get :home
+  setup do
+    @page = pages(:one)
+  end
+
+  test "should get index" do
+    get :index
+    assert_response :success
+    assert_not_nil assigns(:pages)
+  end
+
+  test "should get new" do
+    get :new
     assert_response :success
   end
 
-  test "should get about" do
-    get :about
+  test "should create page" do
+    assert_difference('Page.count') do
+      post :create, page: { page: @page.page, picture: @page.picture }
+    end
+
+    assert_redirected_to page_path(assigns(:page))
+  end
+
+  test "should show page" do
+    get :show, id: @page
     assert_response :success
   end
 
-  test "should get catering" do
-    get :catering
+  test "should get edit" do
+    get :edit, id: @page
     assert_response :success
   end
 
-  test "should get deli" do
-    get :deli
-    assert_response :success
+  test "should update page" do
+    patch :update, id: @page, page: { page: @page.page, picture: @page.picture }
+    assert_redirected_to page_path(assigns(:page))
   end
 
-  test "should get pizza" do
-    get :pizza
-    assert_response :success
-  end
+  test "should destroy page" do
+    assert_difference('Page.count', -1) do
+      delete :destroy, id: @page
+    end
 
-  test "should get pastries" do
-    get :pastries
-    assert_response :success
+    assert_redirected_to pages_path
   end
-
-  test "should get subs" do
-    get :subs
-    assert_response :success
-  end
-
 end
