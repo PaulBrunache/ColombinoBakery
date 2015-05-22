@@ -16,35 +16,6 @@ $about_color: #2a2a2a
     color: rgba(46, 204, 113, 1)
     margin-bottom: 2%
     border-radius: 7px
-    
-.paper
-    background-color: white
-    &:before, &:after
-        z-index: -1
-        position: absolute
-        content: ""
-        bottom: 15px
-        left: 10px
-        width: 50%
-        max-width: 300px
-        height: 10px
-        background: rgba(0,0,0,0.7)
-        -webkit-box-shadow: 0 15px 10px rgba(0,0,0,0.7)
-        -moz-box-shadow: 0 15px 10px rgba(0,0,0,0.7)
-        box-shadow: 0 15px 10px rgba(0,0,0,0.7)
-        -webkit-transform: rotate(-3deg)
-        -moz-transform: rotate(-3deg)
-        -o-transform: rotate(-3deg)
-        -ms-transform: rotate(-3deg)
-        transform: rotate(-3deg)
-    &:after 
-        -webkit-transform: rotate(3deg)
-        -moz-transform: rotate(3deg)
-        -o-transform: rotate(3deg)
-        -ms-transform: rotate(3deg)
-        transform: rotate(3deg)
-        right: 10px
-        left: auto
 
 
 /*=============================================================================
@@ -126,3 +97,68 @@ $about_color: #2a2a2a
             margin-left: 40%
         padding: 2%
         font-family: 'freight-text-pro', georgia, serif
+
+/*=============================================================================
+ ** Right side
+ **============================================================================
+
+body
+    overflow-x: hidden
+.parallax-ui
+    height: 100vh
+    overflow-x: hidden
+    overflow-y: auto
+    -webkit-perspective: 1px
+    perspective: 1px
+    .content
+        margin-top: 350px
+        padding: 2%
+        background-color: white
+    .layer
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        
+    
+    .front
+        -webkit-transform: translateZ(0)
+        transform: translateZ(0)
+    
+    .back
+        margin-top: 95px
+        width: 56.35%
+        height: 45vh
+        -webkit-transform: translateZ(-1px) scale(4.3,3)
+        transform: translateZ(-1px) scale(4.3,3)
+
+      
+.paper
+    background-color: white
+    &:before, &:after
+        z-index: -1
+        position: absolute
+        content: ""
+        bottom: 15px
+        left: 10px
+        width: 50%
+        max-width: 300px
+        height: 10px
+        background: rgba(0,0,0,0.7)
+        -webkit-box-shadow: 0 15px 10px rgba(0,0,0,0.7)
+        -moz-box-shadow: 0 15px 10px rgba(0,0,0,0.7)
+        box-shadow: 0 15px 10px rgba(0,0,0,0.7)
+        -webkit-transform: rotate(-3deg)
+        -moz-transform: rotate(-3deg)
+        -o-transform: rotate(-3deg)
+        -ms-transform: rotate(-3deg)
+        transform: rotate(-3deg)
+    &:after 
+        -webkit-transform: rotate(3deg)
+        -moz-transform: rotate(3deg)
+        -o-transform: rotate(3deg)
+        -ms-transform: rotate(3deg)
+        transform: rotate(3deg)
+        right: 10px
+        left: auto
