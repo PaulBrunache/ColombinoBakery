@@ -5,6 +5,5 @@ class CreateCategories < ActiveRecord::Migration
       t.belongs_to :page, index: true
       t.timestamps null: false
     end
-    add_foreign_key :categories, :pages
   end
 end
