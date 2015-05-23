@@ -4,18 +4,19 @@ Rails.application.routes.draw do
   
   resources :food_prices, :users, :categories, :pages
   
-  get 'pages/about', to: 'pages#about'
+  get 'catering' , to: 'pages#catering'
+
+  get 'deli', to: 'pages#deli'
+
+  get 'pizza', to: 'pages#pizza'
+
+  get 'pastries' , to: 'pages#pastries'
+
+  get 'subs' , to: 'pages#subs'
   
-  get 'pages/catering' , to: 'pages#catering'
-
-  get 'pages/deli', to: 'pages#deli'
-
-  get 'pages/pizza', to: 'pages#pizza'
-
-  get 'pages/pastries' , to: 'pages#pastries'
-
-  get 'pages/subs' , to: 'pages#subs'
-
+  get    'login', to: 'sessions#new'
+  post   'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
 
 
 

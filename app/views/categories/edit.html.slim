@@ -1,8 +1,8 @@
-h1 Editing category
 
-== render 'form'
+    == render 'form'
 
-= link_to 'Show', @category
-'|
-button.btn.blue.round = link_to ' Back', categories_path, class: ['fa','fa-arrow-left']
-
+.button-control
+    = link_to 'Show', @category
+    ' |
+    = link_to ' Back', categories_path, class: ['fa','fa-arrow-left']
+    

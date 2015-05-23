@@ -1,8 +1,8 @@
-h1 Listing categories
-
 table
   thead
     tr
+      th Name
+      th Page
       th
       th
       th
@@ -10,9 +10,11 @@ table
   tbody
     - @categories.each do |category|
       tr
+        td = category.name
+        td = category.page_id
         td = link_to 'Show', category
         td = link_to 'Edit', edit_category_path(category)
-        td = link_to 'Destroy', category, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Delete', category, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
 

@@ -1,22 +1,22 @@
 .form = form_for @page, html: { multipart: true } do |f|
   - if @page.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@page.errors.count, "error")} prohibited this page from being saved:"
+    .flash.info
+      h4 = "#{pluralize(@page.errors.count, "error")} prohibited this page from being saved:"
       ul
         - @page.errors.full_messages.each do |message|
           li = message
-
+  .row
+    = f.label :page_name
+    = f.select :page_name, options_for_page('pages'), prompt: 'Select a page'
+    
   .row
     = f.label :picture
     = f.file_field :picture, accept: 'image/jpeg,image/jpg,image/gif,image/png'
   .row
     = f.label 'Set As Default'
-    = f.select :active, options_for_page, prompt: 'Select status'
-  .row
-    = f.label :page
-    = f.select :page, options_for_page('pages'), prompt: 'Select a page'
-    
-  .actions = f.submit
+    = f.select :active, [['Yes', true], ['No', false]], prompt: 'Select status'
+ 
+  = f.submit
   
 javascript:
   | $('#page_picture').bind('change',function(){

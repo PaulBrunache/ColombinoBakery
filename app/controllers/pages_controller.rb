@@ -20,33 +20,27 @@ class PagesController < ApplicationController
 
   def create
     @page = Page.new(page_params)
-
-    respond_to do |format|
       if @page.save
-        format.html { redirect_to @page, notice: 'Page was successfully created.' }
+        flash[:success] ='Category was successfully created.'
+        redirect_to category_path(@page)
       else
-        format.html { render :new }
-       
+        render :new 
       end
-    end
   end
 
   def update
-    respond_to do |format|
       if @page.update(page_params)
-        format.html { redirect_to @page, notice: 'Page was successfully updated.' }
-
+        flash[:success] ='Category was successfully Updated.'
+        redirect_to category_path(@page)
       else
-        format.html { render :edit }
+        render :edit 
       end
-    end
   end
 
   def destroy
     @page.destroy
-    respond_to do |format|
-      format.html { redirect_to pages_url, notice: 'Page was successfully destroyed.' }
-    end
+    flash[:success] ='Category was successfully deleted.'
+    redirect_to category_path(@page)
   end
 
   private
@@ -57,7 +51,7 @@ class PagesController < ApplicationController
 
 
     def page_params
-      params.require(:page).permit(:picture, :page, :active)
+      params.require(:page).permit(:page_name, :picture, :active)
     end
   #static pages
   def home

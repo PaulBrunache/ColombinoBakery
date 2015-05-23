@@ -1,9 +1,7 @@
-h1 Listing food_prices
-
 table
   thead
     tr
-      th Description
+      th Item
       th Price
       th Serves
       th Small
@@ -18,18 +16,18 @@ table
   tbody
     - @food_prices.each do |food_price|
       tr
-        td = food_price.description
+        td = food_price.item_name
         td = food_price.price
         td = food_price.serves
         td = food_price.small
         td = food_price.regular
         td = food_price.large
         td = food_price.party
-        td = food_price.category
+        td = food_price.category.name
         td = link_to 'Show', food_price
         td = link_to 'Edit', edit_food_price_path(food_price)
-        td = link_to 'Destroy', food_price, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Delete', food_price, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
 
-button.btn.green.round = link_to ' New Food Item', new_food_price_path, class: ['fa','fa-plus']
+= link_to 'New Food price'

@@ -1,4 +1,3 @@
-h1 Listing pages
 
 table
   thead
@@ -17,7 +16,7 @@ table
         td = page.active
         td = link_to 'Show', page
         td = link_to 'Edit', edit_page_path(page)
-        td = link_to 'Destroy', page, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Delete', page, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
 

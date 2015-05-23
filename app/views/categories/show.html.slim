@@ -1,6 +1,12 @@
-p.success = notice
+table
+  thead
+    th Name
+    th Page
+  tr
+    td = @category.name
+    td = @category.page_id
 
-
-= link_to 'Edit', edit_category_path(@category)
-'|
-= link_to ' Back', categories_path
+.button-control
+  = link_to 'Edit', edit_category_path(@category)
+  '|
+  = link_to ' Back', categories_path

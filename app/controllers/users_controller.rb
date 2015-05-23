@@ -1,62 +1,59 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  before_action :logged_in_user, only: [:edit, :update]
+  before_action :correct_user,   only: [:edit, :update]
+  
   def index
     @user = User.all
   end
-
   def show
+    @user = User.find(params[:id])
   end
 
   def new
     @user = User.new
   end
 
-
-  def edit
-  end
-
   def create
     @user = User.new(user_params)
-
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: 'Category was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
-      else
-        format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if @user.save
+      log_in @user
+      flash[:success] = "Welcome to Colombinobakery Admin"
+      redirect_to @user
+    else
+      render 'new'
     end
+  end
+
+  def edit
+    @user = User.find(params[:id])
   end
 
   def update
-    respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'Category was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
-      else
-        format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  def destroy
-    @user.destroy
-    respond_to do |format|
-      format.html { redirect_to categories_url, notice: 'Category was successfully destroyed.' }
-      format.json { head :no_content }
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      flash[:success] = "Profile has been updated"
+      redirect_to @user
+    else
+      render 'edit'
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_category
-      @user = User.find(params[:id])
+
+    def user_params
+      params.require(:user).permit(:email, :password)
+    end
+    
+    def logged_in_user
+      unless logged_in?
+        flash[:error] = "Please log in."
+        redirect_to login_url
+      end
     end
 
-    def category_params
-      params.require(:user).permit(:name, :password_digest)
+    # Confirms the correct user.
+    def correct_user
+      @user = User.find(params[:id])
+      redirect_to(root_url) unless @user == current_user
     end
 end

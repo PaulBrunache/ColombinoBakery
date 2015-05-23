@@ -1,7 +1,7 @@
 .form = form_for @category do |f|
   - if @category.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@category.errors.count, "error")} prohibited this category from being saved:"
+    .flash.info
+      h4 = "#{pluralize(@category.errors.count, "error")} prohibited this category from being saved:"
       ul
         - @category.errors.full_messages.each do |message|
           li = message
@@ -9,8 +9,8 @@
     = f.label :name
     = f.text_field :name
   .row
-    = f.label :page
-    = f.text_field :page
+    = f.label :page_id
+    = f.collection_select :page_id, Page.all, :id, :page_name, prompt: true
   .row
     .button-group
        = f.submit 

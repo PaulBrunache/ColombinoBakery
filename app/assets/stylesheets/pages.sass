@@ -8,20 +8,54 @@ $main_color: rgba(46, 204, 113, 1)
 $about_bg_color: rgba(255,255,255, .92)
 $about_color: #2a2a2a
 
-.success
-    background-color: rgba(46, 204, 113, .3)
-    border: 1px solid $main_color
-    padding: 1%
-    font-size: 1.2rem
-    color: rgba(46, 204, 113, 1)
-    margin-bottom: 2%
-    border-radius: 7px
-
 
 /*=============================================================================
  ** Left side
  **============================================================================
+.flash
+    border: 1px solid
+    border-radius: 7px
+    margin: 1% 0
+    padding: 1%
+    width: 50%
+    &.info
+        color: #00529B
+        background-color: #BDE5F8
+     
+    &.success
+        color: #4F8A10
+        background-color: #DFF2BF
+     
+    &.warning
+        color: #9F6000
+        background-color: #FEEFB3
+      
+    &.error
+        color: #D8000C
+        background-color: #FFBABA
 
+.current
+    border-bottom: 2px solid darken(rgba(45,204,165,1), 10%)
+    border-top: 2px solid darken(rgba(45,204,165,1), 10%)//255 98 57
+    background-color: white
+    a
+        color: darken(rgba(45,204,165,1), 5%)
+
+nav 
+    ul
+        li
+            &:hover
+                background-color: white
+                color: black
+                a
+                    &:hover
+                        color: darken(rgba(45,204,165,1), 5%)
+                        border-bottom: 2px solid darken(rgba(45,204,165,1), 10%)
+                        border-top: 2px solid darken(rgba(45,204,165,1), 10%)//255 98 57
+
+
+        
+  
 #left
     background-image: image-url('bakeryblur.jpg')
     position: fixed 
@@ -59,9 +93,9 @@ $about_color: #2a2a2a
             padding: 2%
             #take-survey
                 margin-top: 3%
-                background-color: rgba(245, 166, 35,.8)
+                background-color: darken(rgba(45,204,165,1), 10%)
                 color: white
-                border-color: rgba(245, 166, 35,.7)
+                border-color: darken(rgba(45,204,165,1), 5%)
                 &:hover
                     background-color: rgba(255,255,255, .60)
                     color: #27ae60
@@ -80,7 +114,6 @@ $about_color: #2a2a2a
         &:nth-child(even)
             background-color: white
     .start-content
-        border: 1px solid red
         overflow: auto
         padding: 1%
     .menu

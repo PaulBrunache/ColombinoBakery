@@ -1,14 +1,14 @@
 .form= form_for @food_price do |f|
   - if @food_price.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@food_price.errors.count, "error")} prohibited this food_price from being saved:"
+    .flash.info
+      h4 = "#{pluralize(@food_price.errors.count, "error")} prohibited this food_price from being saved:"
       ul
         - @food_price.errors.full_messages.each do |message|
           li = message
 
   .row
-    = f.label :description
-    = f.text_field :description
+    = f.label :item_name
+    = f.text_field :item_name
   .row
     = f.label :price
     = f.text_field :price
@@ -29,6 +29,6 @@
     = f.text_field :party
   .row
     = f.label :category
-    = f.text_field :category
+    = f.collection_select :category_id, Category.all, :id, :name, prompt: "Select/Type Category"
   .button-group
     .button.green.round = f.submit

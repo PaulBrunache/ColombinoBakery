@@ -9,10 +9,21 @@ html
     = csrf_meta_tags
   body
     .site-container
-      .c-8#left.tablet-hide
+      - if page_names.include? current_uri
         = render "layouts/sidebar"
-      #right.c-10.gap-l-8.tablet-18.gap-t-none
-        .c-18
-          = render "layouts/menu"
-          = yield
+        #right.c-10.gap-l-8.tablet-18.gap-t-none
+          .c-18
+            = render "layouts/menu"
+            .parallax-ui
+              img.back src="http://static3.gamespot.com/uploads/original/1365/13658182/2559799-bak_sshot075.jpg"
+                = yield
+      - else
+        #right.c-18
+            = render "layouts/menu"
+            .start-content
+              .control-panel
+                - flash.each do |key, value|
+                  = content_tag :div, value, class: "flash #{key}"
+                = yield
+             
       
