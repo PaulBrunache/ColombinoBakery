@@ -30,5 +30,5 @@
   .row
     = f.label :category
     = f.collection_select :category_id, Category.all, :id, :name, prompt: "Select/Type Category"
-  .button-group
+  .button-control
     .button.green.round = f.submit

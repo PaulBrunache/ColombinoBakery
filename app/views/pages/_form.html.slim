@@ -16,7 +16,7 @@
     = f.label 'Set As Default'
     = f.select :active, [['Yes', true], ['No', false]], prompt: 'Select status'
   .button-control
-    = f.submit
+    .button.green.round = f.submit
   
 javascript:
   | $('#page_picture').bind('change',function(){

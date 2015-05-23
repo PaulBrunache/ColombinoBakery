@@ -11,7 +11,6 @@
   .row
     = f.label :page_id
     = f.collection_select :page_id, Page.all, :id, :page_name, prompt: true
-  .row
-    .button-group
-       = f.submit 
+  .button-control
+    = f.submit 
       
