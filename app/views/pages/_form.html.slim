@@ -11,12 +11,12 @@
     
   .row
     = f.label :picture
-    = f.file_field :picture, accept: 'image/jpeg,image/jpg,image/gif,image/png'
+    = f.file_field :picture, accept: 'image/jpeg,image/jpg,image/gif,image/png', class: ['btn','default','round']
   .row
     = f.label 'Set As Default'
     = f.select :active, [['Yes', true], ['No', false]], prompt: 'Select status'
- 
-  = f.submit
+  .button-control
+    = f.submit
   
 javascript:
   | $('#page_picture').bind('change',function(){
