@@ -20,12 +20,12 @@ class PagesController < ApplicationController
 
   def create
     @page = Page.new(page_params)
-      if @page.save
-        flash[:success] ='Category was successfully created.'
+    if @page.save
+      flash[:success] ='Category was successfully created.'
         # redirect_to page_path(@page)
-      else
-        render :new 
-      end
+    else
+      render :new 
+    end
   end
 
   def update
