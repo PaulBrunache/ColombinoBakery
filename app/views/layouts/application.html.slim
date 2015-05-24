@@ -15,7 +15,7 @@ html
           .c-18
             = render "layouts/menu"
             .parallax-ui
-              img.back src="http://static3.gamespot.com/uploads/original/1365/13658182/2559799-bak_sshot075.jpg"
+              .back = image_tag(get_featured_image)
                 = yield
       - else
         #right.c-18

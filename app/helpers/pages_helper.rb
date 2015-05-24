@@ -9,6 +9,7 @@ module PagesHelper
         link_to link_text, link_path
       end
     end
+    
     def options_for_page(value = nil)
       if(value == 'pages')
        return ['Home', 'Catering', 'Deli', 'Pastries','Pizza','Subs']
