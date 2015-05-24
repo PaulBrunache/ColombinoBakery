@@ -21,7 +21,7 @@ class FoodPricesController < ApplicationController
       @food_price = FoodPrice.new(food_price_params)
       if @food_price.save
          flash[:success] ='Food Item was successfully Created.'
-        redirect_to food_price_path(@food_price)
+        redirect_to food_prices_path
       else
         render :new 
       end
@@ -30,7 +30,7 @@ class FoodPricesController < ApplicationController
   def update
       if @food_price.update(food_price_params)
         flash[:success] ='Food Item was successfully Updated.'
-        redirect_to food_price_path(@food_price)
+        redirect_to food_prices_path
       else
         render :edit 
       end
@@ -39,7 +39,7 @@ class FoodPricesController < ApplicationController
   def destroy
       @food_price.destroy
       flash[:success] ='Food Item was successfully deleted.'
-      redirect_to food_price_path(@food_price)
+      redirect_to food_prices_path
   end
 
   private

@@ -22,7 +22,7 @@ class PagesController < ApplicationController
     @page = Page.new(page_params)
     if @page.save
       flash[:success] ='Category was successfully created.'
-        # redirect_to page_path(@page)
+      redirect_to pages_path
     else
       render :new 
     end
@@ -31,7 +31,7 @@ class PagesController < ApplicationController
   def update
       if @page.update(page_params)
         flash[:success] ='Category was successfully Updated.'
-        redirect_to page_path(@page)
+        redirect_to pages_path
       else
         render :edit 
       end
@@ -40,7 +40,7 @@ class PagesController < ApplicationController
   def destroy
     @page.destroy
     flash[:success] ='Category was successfully deleted.'
-    redirect_to page_path(@page)
+    redirect_to pages_path
   end
 
   private

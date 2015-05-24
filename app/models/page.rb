@@ -1,8 +1,8 @@
 class Page < ActiveRecord::Base
     has_many :categories
     validates :page_name, presence: true
-    mount_uploader :picture, PictureUploader
     validate :picture_size
+    mount_uploader :picture, PictureUploader
     
     before_save :falsify_other_records
     

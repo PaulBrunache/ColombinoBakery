@@ -1,7 +1,7 @@
 
 p
   strong Page:
-  = @page.page
+  = @page.page_name
 p
   strong Picture:
   = image_tag(@page.picture.url, size: '250x150') if @page.picture?
