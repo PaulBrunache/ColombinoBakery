@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   
   resources :food_prices, :users, :categories, :pages
   
+  get 'home' , to: 'pages#home'
+  
   get 'catering' , to: 'pages#catering'
 
   get 'deli', to: 'pages#deli'

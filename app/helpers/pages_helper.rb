@@ -12,7 +12,7 @@ module PagesHelper
     
     def options_for_page(value = nil)
       if(value == 'pages')
-       return ['Home', 'Catering', 'Deli', 'Pastries','Pizza','Subs']
+       return ['home', 'catering', 'deli', 'pastries','pizza','subs']
       else
         return ['true','false']
       end

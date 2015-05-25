@@ -1,10 +1,16 @@
 nav.fixed
   .mobile
       button.menu-toggle.fa.fa-bars.fa-2x
-  ul.menu.bordered.horizontal
-    = active_link 'Home', root_path
-    = active_link 'Catering', catering_path
-    = active_link 'Deli', deli_path
-    = active_link 'Pastries', pastries_path
-    = active_link 'pizza', pizza_path
-    = active_link 'Subs', subs_path
+  -if logged_in?
+    ul.menu.bordered.horizontal.right
+      li = link_to 'Manage Account', user_path(current_user)
+      li = link_to 'Logout', logout_path, method: "delete" 
+  -else
+    ul.menu.bordered.horizontal
+      = active_link 'Home', root_path
+      = active_link 'Catering', catering_path
+      = active_link 'Deli', deli_path
+      = active_link 'Pastries', pastries_path
+      = active_link 'pizza', pizza_path
+      = active_link 'Subs', subs_path
+
