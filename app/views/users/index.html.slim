@@ -7,13 +7,12 @@ table
       th Username
       th
       th
-      th
 
   tbody
     - @user.each do |user|
       tr
         td data-name="User Name"= user.email
-        td = link_to 'Show', user
+        td data-name="Admin"= user.admin if current_user.admin
         td = link_to 'Edit', edit_user_path(user)
         td = link_to 'delete', user, data: {:confirm => 'Are you sure?'}, :method => :delete
 

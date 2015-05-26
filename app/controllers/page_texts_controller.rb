@@ -1,4 +1,5 @@
 class PageTextsController < ApplicationController
+  before_action :user_online, only: [:new,:edit, :update,:index]
   before_action :set_page_text, only: [:show, :edit, :update, :destroy]
 
   # GET /page_texts

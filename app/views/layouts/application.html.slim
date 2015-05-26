@@ -15,8 +15,10 @@ html
           .c-18
             = render "layouts/menu"
             .parallax-ui
-              .back = image_tag(get_featured_image)
-              = yield
+              .back = image_tag(get_featured_image, size:'600X600')
+              .layer.front
+                .content
+                  = yield
       - else
         #right.c-18
             = render "layouts/menu"

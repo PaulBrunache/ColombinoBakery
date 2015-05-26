@@ -16,9 +16,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      log_in @user
-      flash[:success] = "Welcome to Colombinobakery Admin"
-      redirect_to @user
+      flash[:success] = "User has been added to Colombinobakery users"
+      redirect_to users_path
     else
       render 'new'
     end
@@ -26,6 +25,15 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+  end
+  def destroy
+    @user.destroy
+    if current_user.admin
+      flash[:success] ='User was successfully deleted.'
+      redirect_to users_path(current_user) 
+    else
+      redirect_to root_path
+    end
   end
 
   def update
@@ -46,6 +54,14 @@ class UsersController < ApplicationController
 
     def correct_user
       @user = User.find(params[:id])
-      redirect_to(root_url) unless @user == current_user
+      if @user.admin && !current_user.admin #only admins can edit admins
+        redirect_to(users_path) 
+        flash[:danger] = "You do not have permission to perform this action"
+      else if @user != current_user && !current_user.admin #users can only update their own profiles
+        redirect_to(users_path) 
+        flash[:warning] = "Only PAUL can edit someone elses profile"
+      else
+      end
+      end
     end
 end

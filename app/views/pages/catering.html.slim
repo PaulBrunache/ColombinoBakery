@@ -1,2 +1,27 @@
-h1 Pages#catering
-p Find me in app/views/pages/catering.html.slim
+
+table
+    thead
+      tr
+        th Item
+        th Price
+        th Serves
+        th Small
+        th Regular
+        th Large
+        th Party
+        th Category
+        th
+        th
+        th
+  
+    tbody
+      - FoodPrice.all.each do |food_price|
+        tr
+          td data-name="Page Name"= food_price.item_name
+          td data-name="Price"= food_price.price
+          td data-name="Serves"= food_price.serves
+          td data-name="Small Price"= food_price.small
+          td data-name="Regular Price"= food_price.regular
+          td data-name="Large Price"= food_price.large
+          td data-name="Party Price"= food_price.party
+          td data-name="Food Category"= food_price.category.name
