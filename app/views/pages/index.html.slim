@@ -12,9 +12,9 @@
     tbody
       - @pages.each do |page|
         tr
-          td = page.page_name
-          td = image_tag(page.picture.url, size: '100x100') if page.picture?
-          td = page.active
+          td data-name="Page Name" = page.page_name 
+          td data-name="Featured Image" = image_tag(page.picture.url, size: '100x100') if page.picture?
+          td data-name="Active" = page.active
           td = link_to 'Show', page
           td = link_to 'Edit', edit_page_path(page)
           td = link_to 'Destroy', page, data: {:confirm => 'Are you sure?'}, :method => :delete

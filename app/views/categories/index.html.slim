@@ -1,8 +1,11 @@
+.title
+    h1 All Categories
+    
 table
   thead
     tr
-      th Name
-      th Page
+      th Category Name
+      th Page Name
       th
       th
       th
@@ -10,12 +13,11 @@ table
   tbody
     - @categories.each do |category|
       tr
-        td = category.name
-        td = category.page_id
+        td data-name="Category Name"= category.name
+        td data-name="Food Category"= Page.where(id: category.page_id).first.page_name
         td = link_to 'Show', category
         td = link_to 'Edit', edit_category_path(category)
         td = link_to 'Delete', category, data: {:confirm => 'Are you sure?'}, :method => :delete
 
-br
-
-.btn.green.round = link_to ' New Category', new_category_path, class: ['fa','fa-plus']
+.button-control
+  .btn.green.round = link_to ' New Category', new_category_path, class: ['fa','fa-plus']

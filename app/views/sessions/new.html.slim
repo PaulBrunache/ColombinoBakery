@@ -1,15 +1,11 @@
-    .form = form_for(:session, url: login_path) do |f|
-        .row
-          = f.label :email
-          = f.email_field :email
-        .row
-          = f.label :password
-          = f.password_field :password
-        .row
-          .button-control
-            .col.w-2 = f.check_box :remember_me
-            .col.w-10= f.label :remember_me, "Remember me on this computer?"
-              
-          
-        .button-control
-          .w-10.gap-l-4.gap-r-4= f.submit "Log in", class: "btn green round"
+.title
+  h1 Admin login
+.form = form_for(:session, url: login_path) do |f|
+  .row
+    = f.label :email
+    = f.email_field :email
+  .row
+    = f.label :password
+    = f.password_field :password
+  .button-control
+    .w-10.gap-l-4.gap-r-4= f.submit "Log in", class: "btn green round"

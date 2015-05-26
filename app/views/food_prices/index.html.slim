@@ -1,3 +1,5 @@
+  .title
+    h1 All Item Prices
   table
     thead
       tr
@@ -16,14 +18,14 @@
     tbody
       - @food_prices.each do |food_price|
         tr
-          td = food_price.item_name
-          td = food_price.price
-          td = food_price.serves
-          td = food_price.small
-          td = food_price.regular
-          td = food_price.large
-          td = food_price.party
-          td = food_price.category.name
+          td data-name="Page Name"= food_price.item_name
+          td data-name="Price"= food_price.price
+          td data-name="Serves"= food_price.serves
+          td data-name="Small Price"= food_price.small
+          td data-name="Regular Price"= food_price.regular
+          td data-name="Large Price"= food_price.large
+          td data-name="Party Price"= food_price.party
+          td data-name="Food Category"= food_price.category.name
           td = link_to 'Show', food_price
           td = link_to 'Edit', edit_food_price_path(food_price)
           td = link_to 'Delete', food_price, data: {:confirm => 'Are you sure?'}, :method => :delete

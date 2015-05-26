@@ -1,0 +1,25 @@
+h1 Listing page_texts
+
+table
+  thead
+    tr
+      th Content
+      th Page
+      th Title
+      th
+      th
+      th
+
+  tbody
+    - @page_texts.each do |page_text|
+      tr
+        td = page_text.content
+        td = page_text.page
+        td = page_text.title
+        td = link_to 'Show', page_text
+        td = link_to 'Edit', edit_page_text_path(page_text)
+        td = link_to 'Destroy', page_text, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Page text', new_page_text_path

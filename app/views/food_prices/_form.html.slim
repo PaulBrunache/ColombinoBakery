@@ -1,7 +1,7 @@
-.form= form_for @food_price do |f|
+.form = form_for @food_price do |f|
   - if @food_price.errors.any?
     .flash.info
-      h4 = "#{pluralize(@food_price.errors.count, "error")} prohibited this food_price from being saved:"
+      h4 = "#{pluralize(@food_price.errors.count, "error")} prohibited this Food Item from being saved:"
       ul
         - @food_price.errors.full_messages.each do |message|
           li = message

@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  before_action :user_online, only: [:new,:edit, :update,:index]
   before_action :set_page, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -21,7 +22,7 @@ class PagesController < ApplicationController
   def create
     @page = Page.new(page_params)
     if @page.save
-      flash[:success] ='Category was successfully created.'
+      flash[:success] ='Page was successfully created.'
       redirect_to pages_path
     else
       render :new 
@@ -30,7 +31,7 @@ class PagesController < ApplicationController
 
   def update
       if @page.update(page_params)
-        flash[:success] ='Category was successfully Updated.'
+        flash[:success] ='Page was successfully Updated.'
         redirect_to pages_path
       else
         render :edit 
@@ -39,7 +40,7 @@ class PagesController < ApplicationController
 
   def destroy
     @page.destroy
-    flash[:success] ='Category was successfully deleted.'
+    flash[:success] ='Page was successfully deleted.'
     redirect_to pages_path
   end
 

@@ -1,0 +1,19 @@
+.form = form_for @page_text do |f|
+  - if @page_text.errors.any?
+    .flash.info
+      h2 = "#{pluralize(@page_text.errors.count, "error")} prohibited this pages content from being saved:"
+      ul
+        - @page_text.errors.full_messages.each do |message|
+          li = message
+
+  .row
+    = f.label :title
+    = f.text_field :title
+  .row
+    = f.label :content
+    = f.text_area :content
+  .row
+    = f.label :page_id
+    = f.collection_select :page_id, Page.all, :id, :page_name, prompt: true
+  .button-control
+    = f.submit

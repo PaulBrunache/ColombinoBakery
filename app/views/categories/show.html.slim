@@ -1,12 +1,14 @@
+.title
+    h1 Your Category
+    
 table
   thead
     th Name
     th Page
   tr
-    td = @category.name
-    td = @category.page_id
+    td data-name="Category Name"= @category.name
+    td data-name="Page Name"= Page.where(id: @category.page_id).first.page_name
 
 .button-control
   = link_to 'Edit', edit_category_path(@category)
-  '|
   = link_to ' Back', categories_path

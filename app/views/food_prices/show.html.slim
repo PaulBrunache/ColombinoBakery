@@ -1,29 +1,31 @@
-p
-  strong Description:
-  = @food_price.item_name
-p
-  strong Price:
-  = @food_price.price
-p
-  strong Serves:
-  = @food_price.serves
-p
-  strong Small:
-  = @food_price.small
-p
-  strong Regular:
-  = @food_price.regular
-p
-  strong Large:
-  = @food_price.large
-p
-  strong Party:
-  = @food_price.party
-p
-  strong Category:
-  = @food_price.category.name
+table
+    thead
+      tr
+        th Item
+        th Price
+        th Serves
+        th Small
+        th Regular
+        th Large
+        th Party
+        th Category
+        th
+        th
+        th
+  
+    tbody
+      - @food_prices.each do |food_price|
+        tr
+          td data-name="Page Name"= food_price.item_name
+          td data-name="Price"= food_price.price
+          td data-name="Serves"= food_price.serves
+          td data-name="Small Price"= food_price.small
+          td data-name="Regular Price"= food_price.regular
+          td data-name="Large Price"= food_price.large
+          td data-name="Party Price"= food_price.party
+          td data-name="Food Category"= food_price.category.name
   
 .button-control
   = link_to 'Edit', edit_food_price_path(@food_price)
-  ' |
+
   = link_to 'Back', food_prices_path

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150521133352) do
+ActiveRecord::Schema.define(version: 20150526065418) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -37,6 +37,16 @@ ActiveRecord::Schema.define(version: 20150521133352) do
 
   add_index "food_prices", ["category_id"], name: "index_food_prices_on_category_id"
 
+  create_table "page_texts", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "page_id"
+    t.string   "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "page_texts", ["page_id"], name: "index_page_texts_on_page_id"
+
   create_table "pages", force: :cascade do |t|
     t.string   "page_name"
     t.string   "picture"
@@ -47,9 +57,10 @@ ActiveRecord::Schema.define(version: 20150521133352) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email"
+    t.boolean  "admin",           default: false
     t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
 end

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :page_texts
+
   root 'pages#home'
   
   resources :food_prices, :users, :categories, :pages

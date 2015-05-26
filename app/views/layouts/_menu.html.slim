@@ -3,8 +3,8 @@ nav.fixed
       button.menu-toggle.fa.fa-bars.fa-2x
   -if logged_in?
     ul.menu.bordered.horizontal.right
-      li = link_to 'Manage Account', user_path(current_user)
       li = link_to 'Logout', logout_path, method: "delete" 
+      li = link_to 'Admin Home', user_path(current_user)
   -else
     ul.menu.bordered.horizontal
       = active_link 'Home', root_path

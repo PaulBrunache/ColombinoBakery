@@ -1,11 +1,8 @@
-
-p
-  strong Page:
-  = @page.page_name
-p
-  strong Picture:
-  = image_tag(@page.picture.url, size: '250x150') if @page.picture?
-  
+table
+  tr
+    td = @page.page_name
+    td = image_tag(@page.picture.url, size: '250x150') if @page.picture?
+      
 .button-control
   = link_to 'Edit', edit_page_path(@page)
   '|

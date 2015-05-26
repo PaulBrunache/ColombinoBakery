@@ -1,4 +1,5 @@
-h1 Listing categories
+.title
+  h1 All Users
 
 table
   thead
@@ -11,11 +12,11 @@ table
   tbody
     - @user.each do |user|
       tr
-        td = user.email
+        td data-name="User Name"= user.email
         td = link_to 'Show', user
         td = link_to 'Edit', edit_user_path(user)
-        td = link_to 'Destroy', user, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'delete', user, data: {:confirm => 'Are you sure?'}, :method => :delete
 
-br
-
-button.btn.green.round = link_to ' New User', new_user_path, class: ['fa','fa-plus']
+.title
+    .button-control
+        button.btn.green.round = link_to ' New User', new_user_path, class: ['fa','fa-plus']

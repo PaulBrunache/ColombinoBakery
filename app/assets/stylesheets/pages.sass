@@ -17,7 +17,8 @@ $about_color: #2a2a2a
     border-radius: 7px
     margin: 1% 0
     padding: 1%
-    width: 50%
+    width: 80%
+    margin: auto
     &.info
         color: #00529B
         background-color: #BDE5F8
@@ -33,22 +34,19 @@ $about_color: #2a2a2a
     &.error
         color: #D8000C
         background-color: #FFBABA
+        
 
 
+nav > ul > li
+    border-bottom: 2px solid white
+    &:hover
+        background-color: white
+        border-bottom: 2px solid darken(rgba(45,204,165,1), 10%)
+        a
+            color: darken(rgba(45,204,165,1), 5%)
+            
 
-nav 
-    ul
-        li
-        &.right
-            text-align: right
-            &:hover
-                background-color: white
-                color: black
-                a
-                    &:hover
-                        color: darken(rgba(45,204,165,1), 5%)
-                        border-bottom: 2px solid darken(rgba(45,204,165,1), 10%)
-                      
+               
 .current
     border-bottom: 2px solid darken(rgba(45,204,165,1), 10%)
     background-color: white

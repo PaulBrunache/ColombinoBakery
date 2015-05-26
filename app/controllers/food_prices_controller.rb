@@ -1,4 +1,5 @@
 class FoodPricesController < ApplicationController
+  before_action :user_online, only: [:new,:edit, :update,:index]
   before_action :set_food_price, only: [:show, :edit, :update, :destroy]
 
   def index
