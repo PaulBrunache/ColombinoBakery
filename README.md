@@ -10,12 +10,13 @@ https://colombinobakery.herokuapp.com/
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Framework used:
 
 ```ruby 
-gem 'euphoria' https://github.com/PaulBrunache/Euphoria as a framework
+gem 'euphoria' 
 
 ```
+https://github.com/PaulBrunache/Euphoria as a framework
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/colombinobakery/fork )
