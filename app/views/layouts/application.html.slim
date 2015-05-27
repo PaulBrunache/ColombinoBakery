@@ -15,7 +15,7 @@ html
           .c-18
             = render "layouts/menu"
             .parallax-ui
-              .back = image_tag(get_featured_image, size: '600X100')
+              img class= 'back' src=get_featured_image
               .layer.front
                 .content
                   = yield
