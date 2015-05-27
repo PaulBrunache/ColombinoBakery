@@ -11,7 +11,7 @@
     -if current_user.admin
       .row
         = f.label :admin
-        = f.select :admin, [['Yes', true], ['No', false]], prompt: 'admin access'
+        = f.select :admin, [['Yes', true], ['No', false]], prompt: true
     .row
       = f.label :password
       = f.password_field :password

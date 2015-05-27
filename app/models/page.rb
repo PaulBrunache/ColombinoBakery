@@ -4,7 +4,6 @@ class Page < ActiveRecord::Base
     validates :page_name, presence: true
     validate :picture_size
     mount_uploader :picture, PictureUploader
-    
     before_save :falsify_other_records
     
     private
@@ -15,7 +14,7 @@ class Page < ActiveRecord::Base
         end
         def falsify_other_records
             if self.active
-              self.class.where("page_name == ?", self.page_name).where("active == ?", true).update_all(active: false)
+              self.class.where(page_name: self.page_name, active: true).update_all(active: false)
             end
         end
 end
