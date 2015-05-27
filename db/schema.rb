@@ -24,15 +24,15 @@ ActiveRecord::Schema.define(version: 20150526065418) do
 
   create_table "food_prices", force: :cascade do |t|
     t.string   "item_name"
-    t.decimal  "price",       precision: 5, scale: 2
+    t.string   "price"
     t.string   "serves"
     t.string   "small"
     t.string   "regular"
     t.string   "large"
     t.string   "party"
     t.integer  "category_id"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   add_index "food_prices", ["category_id"], name: "index_food_prices_on_category_id"

@@ -1,2 +1,39 @@
-h1 Pages#pastries
-p Find me in app/views/pages/pastries.html.slim
+.row
+    table
+        caption Cookies
+        thead
+          tr
+            th Item
+            th Price/lb
+        tbody
+          - FoodPrice.where(category: Category.find_by_name("Cookies")).each do |food_price|
+            tr
+              td data-name="Food Item"= food_price.item_name
+              td data-name="Price/lb"= food_price.price
+              
+.row
+    table
+        caption Whole Cakes
+        thead
+          tr
+            th Item
+            th Price
+        tbody
+          - FoodPrice.where(category: Category.find_by_name("Whole Cakes")).each do |food_price|
+            tr
+              td data-name="Food Item"= food_price.item_name
+              td data-name="Price"= food_price.price
+   
+.row
+    table
+        caption Assorted Pastries
+        thead
+          tr
+            th Item
+            th Price
+        tbody
+          - FoodPrice.where(category: Category.find_by_name("Assorted Pastries")).each do |food_price|
+            tr
+              td data-name="Food Item"= food_price.item_name
+              td data-name="Price"= food_price.price
+

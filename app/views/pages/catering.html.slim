@@ -1,27 +1,75 @@
-
-table
-    thead
-      tr
-        th Item
-        th Price
-        th Serves
-        th Small
-        th Regular
-        th Large
-        th Party
-        th Category
-        th
-        th
-        th
-  
-    tbody
-      - FoodPrice.all.each do |food_price|
+.row
+  table
+      caption
+      thead
         tr
-          td data-name="Page Name"= food_price.item_name
-          td data-name="Price"= food_price.price
-          td data-name="Serves"= food_price.serves
-          td data-name="Small Price"= food_price.small
-          td data-name="Regular Price"= food_price.regular
-          td data-name="Large Price"= food_price.large
-          td data-name="Party Price"= food_price.party
-          td data-name="Food Category"= food_price.category.name
+          th Item
+          th Price
+          th Serves
+
+      tbody
+        - FoodPrice.where(category: Category.find_by_name("Catering Salads")).each do |food_price|
+          tr
+            td data-name="Item"= food_price.item_name
+            td data-name="Price"= food_price.price
+            td data-name="Serves"= food_price.serves
+.row
+  table
+      caption
+      thead
+        tr
+          th Item
+          th Price
+          th Serves
+
+      tbody
+        - FoodPrice.where(category: Category.find_by_name("Catering Platter")).each do |food_price|
+          tr
+            td data-name="Item"= food_price.item_name
+            td data-name="Price"= food_price.price
+            td data-name="Serves"= food_price.serves
+.row
+  table
+      caption
+      thead
+        tr
+          th Item
+          th Price
+          th Serves
+
+      tbody
+        - FoodPrice.where(category: Category.find_by_name("Catering Sandwiches")).each do |food_price|
+          tr
+            td data-name="Item"= food_price.item_name
+            td data-name="Price"= food_price.price
+            td data-name="Serves"= food_price.serves
+.row
+  table
+      caption
+      thead
+        tr
+          th Item
+          th Price
+          th Serves
+
+      tbody
+        - FoodPrice.where(category: Category.find_by_name("Catering Entrees")).each do |food_price|
+          tr
+            td data-name="Item"= food_price.item_name
+            td data-name="Price"= food_price.price
+            td data-name="Serves"= food_price.serves
+.row
+  table
+      caption
+      thead
+        tr
+          th Item
+          th Price
+          th Serves
+
+      tbody
+        - FoodPrice.where(category: Category.find_by_name("Catering Desserts")).each do |food_price|
+          tr
+            td data-name="Item"= food_price.item_name
+            td data-name="Price"= food_price.price
+            td data-name="Serves"= food_price.serves

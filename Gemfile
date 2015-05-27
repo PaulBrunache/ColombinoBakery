@@ -6,6 +6,7 @@ gem 'euphoria',             '0.1.4.72'
 gem 'slim-rails',           '3.0.1'
 gem 'html2slim',            '0.2.0'
 
+
 gem 'carrierwave-dropbox',  '1.2.1'
 gem 'carrierwave',          '0.10.0'
 gem 'mini_magick',          '3.8.0'

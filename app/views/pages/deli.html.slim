@@ -1,2 +1,156 @@
-h1 Pages#deli
-p Find me in app/views/pages/deli.html.slim
+.row
+    table.w-6.col.alternate.green
+        caption Boars Head Ham
+        thead
+          tr
+            th Item
+            th Price/lb
+        tbody
+          - FoodPrice.where(category: Category.find_by_name("Boars Head Ham")).each do |food_price|
+            tr
+              td data-name="Food Item"= food_price.item_name
+              td data-name="Price/lb"= food_price.price
+         
+    table.w-6.col
+        caption Boars Head Turkey
+        thead
+          tr
+            th Item
+            th Price/lb
+        tbody
+          - FoodPrice.where(category: Category.find_by_name("Boars Head Turkey")).each do |food_price|
+            tr
+              td data-name="Food Item"= food_price.item_name
+              td data-name="Price/lb"= food_price.price
+    table.w-6.col
+        caption Other Boars head Products
+        thead
+          tr
+            th Item
+            th Price/lb
+        tbody
+          - FoodPrice.where(category: Category.find_by_name("Other Boars head ")).each do |food_price|
+            tr
+              td data-name="Food Item"= food_price.item_name
+              td data-name="Price/lb"= food_price.price
+//end section
+.row
+    table.w-6.col
+        caption Boars Head Ham
+        thead
+          tr
+            th Item
+            th Price/lb
+        tbody
+          - FoodPrice.where(category: Category.find_by_name("Olives")).each do |food_price|
+            tr
+              td data-name="Food Item"= food_price.item_name
+              td data-name="Price/lb"= food_price.price
+         
+    table.w-6.col
+        caption Boars Head Turkey
+        thead
+          tr
+            th Item
+            th Price/lb
+        tbody
+          - FoodPrice.where(category: Category.find_by_name("Bread")).each do |food_price|
+            tr
+              td data-name="Food Item"= food_price.item_name
+              td data-name="Price/lb"= food_price.price
+    table.w-6.col
+        caption Other Boars head Products
+        thead
+          tr
+            th Item
+            th Price/lb
+        tbody
+          - FoodPrice.where(category: Category.find_by_name("Grated Cheese")).each do |food_price|
+            tr
+              td data-name="Food Item"= food_price.item_name
+              td data-name="Price/lb"= food_price.price
+//end section
+.row
+    table.w-6.col
+        caption Ham
+        thead
+          tr
+            th Item
+            th Price/lb
+        tbody
+          - FoodPrice.where(category: Category.find_by_name("Ham")).each do |food_price|
+            tr
+              td data-name="Food Item"= food_price.item_name
+              td data-name="Price/lb"= food_price.price
+         
+    table.w-6.col
+        caption Salad
+        thead
+          tr
+            th Item
+            th Price/lb
+        tbody
+          - FoodPrice.where(category: Category.find_by_name("Salad")).each do |food_price|
+            tr
+              td data-name="Food Item"= food_price.item_name
+              td data-name="Price/lb"= food_price.price
+    table.w-6.col
+        caption Salami
+        thead
+          tr
+            th Item
+            th Price/lb
+        tbody
+          - FoodPrice.where(category: Category.find_by_name("Salami")).each do |food_price|
+            tr
+              td data-name="Food Item"= food_price.item_name
+              td data-name="Price/lb"= food_price.price
+//end sections
+.row
+    table.w-6.col
+        caption Peppers
+        thead
+          tr
+            th Item
+            th Price/lb
+        tbody
+          - FoodPrice.where(category: Category.find_by_name("Peppers")).each do |food_price|
+            tr
+              td data-name="Food Item"= food_price.item_name
+              td data-name="Price/lb"= food_price.price
+         
+    table.w-6.col
+        caption Deli
+        thead
+          tr
+            th Item
+            th Price/lb
+        tbody
+          - FoodPrice.where(category: Category.find_by_name("Deli")).each do |food_price|
+            tr
+              td data-name="Food Item"= food_price.item_name
+              td data-name="Price/lb"= food_price.price
+    table.w-6.col
+        caption Meat Prices
+        thead
+          tr
+            th Item
+            th Price/lb
+        tbody
+          - FoodPrice.where(category: Category.find_by_name("Meat Prices")).each do |food_price|
+            tr
+              td data-name="Food Item"= food_price.item_name
+              td data-name="Price/lb"= food_price.price
+//new section
+.row
+    table
+        caption Cheese
+        thead
+          tr
+            th Item
+            th Price/lb
+        tbody
+          - FoodPrice.where(category: Category.find_by_name("Cheese")).each do |food_price|
+            tr
+              td data-name="Food Item"= food_price.item_name
+              td data-name="Price/lb"= food_price.price

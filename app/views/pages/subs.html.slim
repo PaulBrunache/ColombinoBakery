@@ -1,0 +1,71 @@
+.row
+    table
+        caption Cold Subs
+        thead
+          tr
+            th Item
+            th Small 6"
+            th Regular 9"
+            th Large 12"
+
+
+        tbody
+          - FoodPrice.where(category: Category.find_by_name("Cold Subs")).each do |food_price|
+            tr
+              td data-name="Food Item"= food_price.item_name
+              td data-name="Small 6''"= food_price.small
+              td data-name="Regular 9''"= food_price.regular
+              td data-name="Large 12''"= food_price.large
+    table
+        caption Extras
+        thead
+          tr
+            th Item
+            th Small 6"
+            th Regular 9"
+            th Large 12"
+
+
+        tbody
+          - FoodPrice.where(category: Category.find_by_name("Hot Extras")).each do |food_price|
+            tr
+              td data-name="Food Item"= food_price.item_name
+              td data-name="Small 6''"= food_price.small
+              td data-name="Regular 9''"= food_price.regular
+              td data-name="Large 12''"= food_price.large
+        
+    
+.row
+    table
+        caption Hot Subs
+        thead
+          tr
+            th Item
+            th Small 6"
+            th Regular 9"
+            th Large 12"
+
+        tbody
+          - FoodPrice.where(category: Category.find_by_name("Hot Subs")).each do |food_price|
+            tr
+              td data-name="Food Item"= food_price.item_name
+              td data-name="Small 6''"= food_price.small
+              td data-name="Regular 9''"= food_price.regular
+              td data-name="Large 12''"= food_price.large
+    table
+        caption Extras
+        thead
+          tr
+            th Item
+            th Small 6"
+            th Regular 9"
+            th Large 12"
+
+
+        tbody
+          - FoodPrice.where(category: Category.find_by_name("Hot Extras")).each do |food_price|
+            tr
+              td data-name="Food Item"= food_price.item_name
+              td data-name="Small 6''"= food_price.small
+              td data-name="Regular 9''"= food_price.regular
+              td data-name="Large 12''"= food_price.large
