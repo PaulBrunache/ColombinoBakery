@@ -6,7 +6,8 @@
         th Page Name
         th Picture
         th Default
-        th
+        th 
+        th 
         th
   
     tbody
@@ -17,9 +18,11 @@
           td data-name="Active" = page.active
           td = link_to 'Show', page
           td = link_to 'Edit', edit_page_path(page)
-          td = link_to 'Destroy', page, data: {:confirm => 'Are you sure?'}, :method => :delete
+          td = link_to 'Delete', page, data: {:confirm => 'Are you sure?'}, :method => :delete
   
   br
   .button-control
     = link_to 'New Page', new_page_path, class: ['btn','green','round','fa','fa-plus']
+    = link_to 'New Category', new_category_path, class: ['btn','default','round','fa','fa-plus']
+  
   
