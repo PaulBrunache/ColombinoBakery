@@ -5,4 +5,5 @@ CarrierWave.configure do |config|
   config.dropbox_access_token_secret = ENV["ACCESS_TOKEN_SECRET"]
   config.dropbox_user_id = ENV["USER_ID"]
   config.dropbox_access_type = "app_folder"
+  config.cache_dir = "#{Rails.root}/tmp/uploads"
 end
