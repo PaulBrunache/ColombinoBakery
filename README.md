@@ -1,10 +1,10 @@
 # Colombinobakery Bakery
 
-##Old design url
+###Old design url
 
 https://colombinobakery.com/
 
-##New design url (The new design will be migrated to the old design Url)
+###New design url (The new design will be migrated to the old design Url)
 
 https://colombinobakery.herokuapp.com/
 
