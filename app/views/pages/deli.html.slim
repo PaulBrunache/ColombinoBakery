@@ -29,7 +29,7 @@
             th Item
             th Price/lb
         tbody
-          - FoodPrice.where(category: Category.find_by_name("Other Boars head ")).each do |food_price|
+          - FoodPrice.where(category: Category.find_by_name("Other Boars Head ")).each do |food_price|
             tr
               td data-name="Food Item"= food_price.item_name
               td data-name="Price/lb"= food_price.price

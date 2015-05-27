@@ -27,7 +27,7 @@
 
 
         tbody
-          - FoodPrice.where(category: Category.find_by_name("Hot Extras")).each do |food_price|
+          - FoodPrice.where(category: Category.find_by_name("Cold Extras")).each do |food_price|
             tr
               td data-name="Food Item"= food_price.item_name
               td data-name="Small 6''"= food_price.small
