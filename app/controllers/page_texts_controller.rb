@@ -2,10 +2,8 @@ class PageTextsController < ApplicationController
   before_action :user_online, only: [:new,:edit, :update,:index]
   before_action :set_page_text, only: [:show, :edit, :update, :destroy]
 
-  # GET /page_texts
-  # GET /page_texts.json
   def index
-    @page_text_text = PageText.all
+    @page_text = PageText.all
   end
 
 
@@ -50,7 +48,7 @@ class PageTextsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_page_text
-      @page_text_text = PageText.find(params[:id])
+      @page_text= PageText.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
