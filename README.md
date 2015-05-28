@@ -16,7 +16,7 @@ Framework used:
 gem 'euphoria' 
 
 ```
-https://github.com/PaulBrunache/Euphoria as a framework
+https://github.com/PaulBrunache/Euphoria
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/colombinobakery/fork )
