@@ -16,7 +16,6 @@ table
         td = page_text.content
         td = page_text.page
         td = page_text.title
-        td = link_to 'Show', page_text
         td = link_to 'Edit', edit_page_text_path(page_text)
         td = link_to 'Destroy', page_text, data: {:confirm => 'Are you sure?'}, :method => :delete
 

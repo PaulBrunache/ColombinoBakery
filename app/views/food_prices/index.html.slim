@@ -26,7 +26,6 @@
           td data-name="Large Price"= food_price.large
           td data-name="Party Price"= food_price.party
           td data-name="Food Category"= food_price.category.name
-          td = link_to 'Show', food_price
           td = link_to 'Edit', edit_food_price_path(food_price)
           td = link_to 'Delete', food_price, data: {:confirm => 'Are you sure?'}, :method => :delete
   

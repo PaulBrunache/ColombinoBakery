@@ -15,7 +15,7 @@ table
       tr
         td data-name="Category Name"= category.name
         td data-name="Food Category"= Page.where(id: category.page_id).first.page_name
-        td = link_to 'Show', category
+
         td = link_to 'Edit', edit_category_path(category)
         td = link_to 'Delete', category, data: {:confirm => 'Are you sure?'}, :method => :delete
 
