@@ -15,7 +15,7 @@ table
     - @page_text.each do |page_text|
       tr
         td = page_text.page.page_name
-        td = page_text.content.truncate(150, omission: "... (continued)")
+        td = page_text.content.truncate(75, omission: "... (continued)")
         td = page_text.title
         td = link_to 'Edit', edit_page_text_path(page_text)
         td = link_to 'delete', page_text, data: {:confirm => 'Are you sure?'}, :method => :delete
