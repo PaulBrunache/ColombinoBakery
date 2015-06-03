@@ -17,4 +17,7 @@ module PagesHelper
         return ['true','false']
       end
     end
+    def text
+      @text = PageText.all
+    end
 end

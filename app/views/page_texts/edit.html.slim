@@ -1,8 +1,10 @@
-h1 Editing page_text
+.title 
+    .title
+        h3 Editing 
 
-== render 'form'
+    == render 'form'
+    .button-control
+        = link_to 'Show', @page_text
+        = link_to 'Back', page_texts_path
 
-= link_to 'Show', @page_text
-'|
-= link_to 'Back', page_texts_path
-
+        

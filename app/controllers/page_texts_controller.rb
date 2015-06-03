@@ -20,7 +20,7 @@ class PageTextsController < ApplicationController
  
 
   def create
-    @page_text = PageText.new(page_params)
+    @page_text = PageText.new(page_text_params)
     if @page_text.save
       flash[:success] ='Page content was successfully created.'
       redirect_to page_texts_path
@@ -30,7 +30,7 @@ class PageTextsController < ApplicationController
   end
 
   def update
-      if @page_text.update(page_params)
+      if @page_text.update(page_text_params)
         flash[:success] ='Page content was successfully Updated.'
         redirect_to page_texts_path
       else

@@ -8,12 +8,17 @@
 
   .row
     = f.label :title
+    br
     = f.text_field :title
   .row
+    br
     = f.label :content
-    = f.text_area :content
+    br
+    = f.text_area :content, cols:"72"
   .row
+    br
     = f.label :page_id
+    br
     = f.collection_select :page_id, Page.all, :id, :page_name, prompt: true
   .button-control
     = f.submit

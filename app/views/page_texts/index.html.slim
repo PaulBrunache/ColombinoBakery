@@ -1,11 +1,12 @@
-h1 Listing page_texts
+.title
+  h1 All page text
 
 table
   thead
     tr
+      th Text Location
       th Content
-      th Page
-      th Title
+      th Name
       th
       th
       th
@@ -13,12 +14,12 @@ table
   tbody
     - @page_text.each do |page_text|
       tr
-        td = page_text.content
-        td = page_text.page
+        td = page_text.page.page_name
+        td = page_text.content.truncate(150, omission: "... (continued)")
         td = page_text.title
         td = link_to 'Edit', edit_page_text_path(page_text)
-        td = link_to 'Destroy', page_text, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'delete', page_text, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 br
 
-= link_to 'New Page text', new_page_text_path
+= link_to 'New Page text', new_page_text_path, class: ['btn','green','round','fa','fa-plus']

@@ -4,8 +4,9 @@
 @import "//fonts.googleapis.com/css?family=Tangerine"
 @import "//fonts.googleapis.com/css?family=Playball"
 $logo_text_color: white
-$main_color: rgba(46, 204, 113, 1)
-$about_bg_color: rgba(255,255,255, .92)
+$main_color: #2ecc71//#42d17f
+$secondary_color: #24a485
+$about_bg_color: rgba(255,255,255, .95)
 $about_color: #2a2a2a
 
 
@@ -95,7 +96,7 @@ nav > ul > li
             padding: 2%
             #take-survey
                 margin-top: 3%
-                background-color: darken(rgba(45,204,165,1), 10%)
+                background-color: $secondary_color
                 color: white
                 border-color: darken(rgba(45,204,165,1), 5%)
                 &:hover
@@ -106,7 +107,7 @@ nav > ul > li
                 font-size: 3rem
                 font-family: "Tangerine", Times, serif
             
-    #location
+    #connect
         margin: 10% auto 0 auto
         ul
             width: 80%
@@ -123,6 +124,7 @@ nav > ul > li
  ** Right side
  **============================================================================
 #right
+    font-family: 'freight-text-pro', georgia, serif
     .row
         &:nth-child(even)
             background-color: white
@@ -135,7 +137,9 @@ nav > ul > li
         li
             text-align: center
     #about
+        margin-top: 2%
         span
+            
            
             font-family: "Tangerine"
             text-align: center
@@ -143,7 +147,37 @@ nav > ul > li
             color: #2a2a2a
             margin-left: 40%
         padding: 2%
-        font-family: 'freight-text-pro', georgia, serif
+    .header
+        padding: 1%
+        background-color: $secondary_color
+        color: white
+        border-radius: 4px 4px 0 0 
+
+    
+    #location
+        span
+            margin-right: 1%
+            &:first-child
+                &:before
+                    content: "\f015"
+                    font-size: 1.5rem
+            &:last-child
+                font-size: 1rem
+        text-align: center
+        border-bottom: 1px solid $secondary_color
+        border-radius: 6px
+    #hours
+        span
+            margin-right: 1%
+            &:first-child
+                &:before
+                    content: "\f017"
+                    font-size: 1.5rem
+            &:last-child
+                font-size: 1.2rem
+        text-align: center
+        border-bottom: 1px solid $secondary_color
+        border-radius: 6px
 
 /*=============================================================================
  ** Right side
@@ -220,7 +254,7 @@ table
     border-collapse: separate
     border-radius: 5px
     th
-        background-color: #24a283
+        background-color: $secondary_color
         color: white
         &:first-child
             border-top-left-radius: 5px
