@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.1.5'
 
-gem 'euphoria',             '0.1.4.72'
+gem 'euphoria',              git: "git://github.com/PaulBrunache/Euphoria.git"
 gem 'slim-rails',           '3.0.1'
 gem 'html2slim',            '0.2.0'
 gem 'carrierwave',          '0.10.0'
