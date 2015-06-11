@@ -1,6 +1,6 @@
 .row
     .row
-        #hours.w-8.col.gap-r-2.tablet-8
+        #hours.w-8.col.gap-r-2.tablet-8.sm-tablet-8
                 
                 .header 
                     span.fa.fa-home
@@ -10,7 +10,7 @@
                     .content-box = simple_format(data.content)
                 br
 
-        #location.w-8.col.tablet-8
+        #location.w-8.col.tablet-8.sm-tablet-8
                 .header
                     span.fa.fa-home
                     span Find Us
@@ -18,8 +18,14 @@
                 -text.where(title: "address").each do |data|
                     .content-box = simple_format(data.content)
                 br
+      
+    .row  
+        br
+        br
+        .content-box
+            -text.where(title: "menu download link").each do |data|
+                = link_to " Download Our Menus", data.content, class: ['btn','default','round','fa','fa-download','w-18']
                     
-                
     #about.w-18
               span Est. 1989
               hr

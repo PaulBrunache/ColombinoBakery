@@ -1,16 +1,10 @@
 # Colombinobakery Bakery
 
-###Old design url
-
-https://colombinobakery.com/
-
-###New design url (The new design will be migrated to the old design Url)
-
-https://colombinobakery.herokuapp.com/
+http://www.colombinobakery.com/
 
 ## Installation
 
-Framework used:
+Css Framework used:
 
 ```ruby 
 gem 'euphoria' 
