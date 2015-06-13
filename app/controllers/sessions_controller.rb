@@ -9,6 +9,9 @@ class SessionsController < ApplicationController
 
   
   def new
+    if session_active
+      redirect_to user
+    end
   end
 
   def create
