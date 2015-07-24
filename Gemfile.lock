@@ -1,10 +1,3 @@
-GIT
-  remote: git://github.com/PaulBrunache/Euphoria.git
-  revision: dcd041cbe67a94f43112c6f77bb85b632f599010
-  specs:
-    euphoria (0.1.4.72)
-      sass-rails (~> 5.0.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -74,6 +67,10 @@ GEM
     domain_name (0.5.24)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
+    euphoria (0.1.41)
+      coffee-rails (~> 4.1.0)
+      font-awesome-rails (~> 4.3.0.0)
+      sass-rails (~> 5.0.1)
     execjs (2.5.2)
     font-awesome-rails (4.3.0.0)
       railties (>= 3.2, < 5.0)
@@ -206,7 +203,7 @@ DEPENDENCIES
   carrierwave (= 0.10.0)
   cloudinary (= 1.1.0)
   coffee-rails (= 4.1.0)
-  euphoria!
+  euphoria (= 0.1.41)
   font-awesome-rails (= 4.3.0.0)
   html2slim (= 0.2.0)
   jbuilder (= 2.2.3)
