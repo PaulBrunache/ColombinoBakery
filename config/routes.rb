@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
 
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  devise_for :admin_users
   resources :page_texts
 
   root 'pages#home'
-  
+
   resources :food_prices, :users, :categories, :pages
-  
+
   get 'home' , to: 'pages#home'
-  
+
   get 'catering' , to: 'pages#catering'
 
   get 'deli', to: 'pages#deli'
@@ -17,7 +19,7 @@ Rails.application.routes.draw do
   get 'pastries' , to: 'pages#pastries'
 
   get 'subs' , to: 'pages#subs'
-  
+
   get    'login', to: 'sessions#new'
   post   'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
@@ -28,7 +30,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
- 
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
