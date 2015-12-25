@@ -1,7 +1,7 @@
 RailsAdmin.config do |config|
 
   config.authorize_with do
-    redirect_to main_app.root_path unless current_user.admin == true
+    authenticate_admin_user!
   end
 
   config.actions do
@@ -19,4 +19,6 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  config.current_user_method(&:current_admin_user)
 end

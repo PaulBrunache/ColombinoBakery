@@ -1,6 +1,6 @@
 .title
   h1 Admin login
-.form = form_for(:session, url: login_path) do |f|
+.form = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .row
     = f.label :email
     = f.email_field :email

@@ -1,9 +1,6 @@
 module ApplicationHelper
   def page_names
     ['', 'catering','pastries', 'deli','pizza','subs']
-    #returns an array of existing pagenames
-    #if pages are null this won't work so I will find a dynamic alternative later
-    # return Page.all.pluck(:page_name).downcase
   end
 
   def current_uri
@@ -23,22 +20,14 @@ module ApplicationHelper
       return nil
     end
   end
-  def log_in(user)
-    session[:user_id] = user.id
-  end
 
-  def current_user
-    @current_user ||= AdminUser.find_by(id: session[:user_id])
-  end
-
-  #check to see if user is logged in
-  def logged_in?
-    !current_user.nil?
-  end
-
-  def log_out
-    session.delete(:user_id)
-    @current_user = nil
+  def after_sign_in_path_for(resource)
+    sign_in_url = new_admin_user_session_path
+    if request.referer == sign_in_url
+     super
+    else
+     stored_location_for(resource) || request.referer || root_path
+    end
   end
 
 end

@@ -4,15 +4,5 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :user_online
   include ApplicationHelper
-
-  private
-    def user_online
-      unless logged_in?
-        redirect_to login_path
-        flash[:error] = 'You must be logged in to perform this action'
-      end
-    end
-
-
-
+  
 end
