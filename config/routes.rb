@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   get 'pizza', to: 'pages#pizza'
   get 'pastries' , to: 'pages#pastries'
   get 'subs' , to: 'pages#subs'
+  get '*path', to: 'pages#home'
 
 end

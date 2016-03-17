@@ -5,4 +5,5 @@ class ApplicationController < ActionController::Base
   helper_method :user_online
   include ApplicationHelper
   
+  
 end

@@ -8,24 +8,36 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
+    // - if maintenance?
+    //   - if params[:controller] == 'devise' 
+    //     = yield
+    //   - else
+    //     = image_tag "down_for_maintenance.png"
+      
+    // - else
     .site-container
       - if page_names.include? current_uri
-        = render "layouts/sidebar"
-        #right.c-10.gap-l-8.tablet-18.gap-t-none
-          .c-18
-            = render "layouts/menu"
-            .parallax-ui
-              img class= 'back' src=get_featured_image
-              .layer.front
-                .content
-                  = yield
-      - else
+        - if maintenance?
+          = render "layouts/maintenance"
+        - else
+          = render "layouts/sidebar"
+          #right.c-10.gap-l-8.tablet-18.gap-t-none
+            .c-18
+              = render "layouts/menu"
+              .parallax-ui
+                img class= 'back' src=get_featured_image
+                .layer.front
+                  .content
+                    = yield
+      - elsif params[:controller] == 'devise/sessions' 
         #right.c-18
-            = render "layouts/menu"
-            .start-content
-              .control-panel
-                - flash.each do |key, value|
-                  = content_tag :div, value, class: "flash #{key}"
-                = yield
-             
+          .start-content
+            .control-panel
+              - flash.each do |key, value|
+                = content_tag :div, value, class: "flash #{key}"
+              = yield
+      - else 
+        = render "layouts/maintenance"
+
+                 
       

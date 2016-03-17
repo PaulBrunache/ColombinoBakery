@@ -72,4 +72,6 @@ class PagesController < ApplicationController
 
   def subs
   end
+  def maintenance
+  end
 end

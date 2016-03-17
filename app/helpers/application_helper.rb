@@ -1,4 +1,7 @@
 module ApplicationHelper
+  def maintenance?
+    true
+  end
   def page_names
     ['', 'catering','pastries', 'deli','pizza','subs']
   end
